@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>職員検索画面</title>
+</head>
+<body>
+						<!-- 2:ソースの流れ controllerクラス のアノテーション、shainInfoFormへ飛ぶ-->
+	<form method="POST" action="result.html" th:action="@{result}" th:object="${shainInfoForm}">
+	<p>
+	ID:
+	<input type = "search" name ="id" placeholder="IDを入力してください。">
+	</p>
+	<p style="color: red;" th:errors="${shainInfoForm.id}" class="error">---</p>
+	<p>
+	職員名:
+	<input type = "search" name ="name" placeholder="名前を入力してください。">
+	</p>
+	<p>
+	性別:
+	<input type = "radio" name ="sex" value="male">男
+	<input type = "radio" name ="sex" value="female">女
+	</p>
+	<p>
+	役職:
+	<input type = "radio" name ="position" value="ceo">代表取締役
+	<input type = "radio" name ="position" value="director">取締役
+	<input type = "radio" name ="position" value="leader">グループリーダー
+	<input type = "radio" name ="position" value="subleader">サブリーダー
+	<input type = "radio" name ="position" value="normal">その他
+	</p>
+
+	検索ボタン：
+	<input type ="submit" value="検索">
+	</form>
+
+</body>
+</html>
