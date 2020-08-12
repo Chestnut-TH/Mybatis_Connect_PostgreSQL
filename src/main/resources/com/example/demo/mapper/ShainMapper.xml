@@ -3,7 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.ShainMapper">
-    <select id="selectAll" resultType="com.example.demo.form.ShainInfoForm">
-        SELECT * FROM ksk.shokuin;
+			<!--↓ interfaceで指定した変数名と一致させる。-->
+    <select id="select" resultType="com.example.demo.form.ShainInfoForm">
+        SELECT * FROM ksk.shokuin
+         <where>
+      		<if test="id != null">
+        		id = #{id}
+      		</if>
+    	</where>
     </select>
 </mapper>

@@ -38,12 +38,16 @@ public class SearchController {
 			return "search.html";
 		}
 		
-		List<ShainInfoForm> list = shainMapper.selectAll();
+		String id = shainInfoForm.getId();
+		String name = shainInfoForm.getName();
+		String sex = shainInfoForm.getSex();
+		String position = shainInfoForm.getPosition();
+	
+		List<ShainInfoForm> list = shainMapper.select(id,name,sex,position);
+		//List<ShainInfoForm> list = shainMapper.selectAll();
+		
 		model.addAttribute("ksk",list);
-		//		String id = shainInfoForm.getId();
-//		String name = shainInfoForm.getName();
-//		String sex = shainInfoForm.getSex();
-//		String position = shainInfoForm.getPosition();
+
 //		
 //		model.addAttribute("id", id);
 //		model.addAttribute("name", name);

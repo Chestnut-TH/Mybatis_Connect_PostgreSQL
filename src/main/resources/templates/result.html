@@ -2,10 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" href="css/table.css">
+<title>結果出力画面</title>
 </head>
 <body>
 	<table border="1">
+	
 		<tr>
 			<th>ID</th>
 			<th>職員名</th>
@@ -21,8 +23,8 @@
 			<th><span th:text="${position}"></span></th>
 		</tr>
 		-->
-		  
-		<tr th:each="info: ${ksk.shokuin}">
+		  				<!-- ↓ControllerクラスのaddAttribute("ksk",list)の名前と同じにする。-->
+		<tr th:each="info:${ksk}">
 			<td th:text="${info.id}"></td>
 			<td th:text="${info.name}"></td>
 			<td th:text="${info.sex}"></td>
